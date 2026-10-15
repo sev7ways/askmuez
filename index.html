@@ -75,33 +75,33 @@ const ASSETS={"baic_logo": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBAUEBAYFBQUGBgYH
 const CONSULTANT={name:'Muez Arifin',wa:'6738138884'};
 
 const FAMILIES=[
- {id:'x55',name:'X55',brand:'BAIC',photo:'car_x55',from:25250,src:'baicbrunei.com'},
- {id:'bj30',name:'BJ30',brand:'BAIC',photo:'car_bj30',from:32850,src:'TCY Motors Brunei poster'},
- {id:'bj40',name:'BJ40L',brand:'BAIC',photo:'car_bj40l',from:44600,src:'TCY Motors Brunei poster'},
- {id:'arcfox',name:'Arcfox T1',brand:'BAIC',photo:'car_arcfox',from:26000,src:null,isNew:true},
- {id:'tunland',name:'Tunland V7',brand:'FOTON',photo:'car_tunland',from:43800,src:null},
- {id:'cs2',name:'View CS2',brand:'FOTON',photo:'car_cs2',from:39900,src:'fotonbrunei.com'}
+ {id:'x55',name:'X55',brand:'BAIC',photo:'car_x55',from:25250,src:'TCY Motors Brunei price list'},
+ {id:'bj30',name:'BJ30',brand:'BAIC',photo:'car_bj30',from:32850,src:'TCY Motors Brunei price list'},
+ {id:'bj40',name:'BJ40',brand:'BAIC',photo:'car_bj40l',from:44600,src:'TCY Motors Brunei price list'},
+ {id:'arcfox',name:'Arcfox T1',brand:'ARCFOX',photo:'car_arcfox',from:26000,src:'TCY Motors Brunei price list',isNew:true},
+ {id:'tunland',name:'Tunland V7',brand:'FOTON',photo:'car_tunland',from:44500,src:'TCY Motors Brunei price list'},
+ {id:'cs2',name:'View CS2',brand:'FOTON',photo:'car_cs2',from:39900,src:'TCY Motors Brunei price list'}
 ];
 const SKUS=[
  {id:'x55-fashion',fam:'x55',variant:'Fashion',price:25250,m:{7:385,10:315}},
  {id:'x55-luxury',fam:'x55',variant:'Luxury',price:33900,m:{7:517,10:423}},
- {id:'x55-honor',fam:'x55',variant:'REHEV Honor',price:27800,m:{7:424,10:347}},
- {id:'x55-rluxury',fam:'x55',variant:'REHEV Luxury',price:29500,m:{7:450,10:368}},
+ {id:'x55-honor',fam:'x55',variant:'REHEV Hybrid Honor',price:27800,m:{7:424,10:347}},
+ {id:'x55-rluxury',fam:'x55',variant:'REHEV Hybrid Luxury',price:29500,m:{7:450,10:368}},
  {id:'bj30-lv2',fam:'bj30',variant:'Lv2 ICE',price:32850,m:{7:501,10:409}},
  {id:'bj30-lv3',fam:'bj30',variant:'Lv3 ICE',price:34850,m:{7:532,10:435}},
  {id:'bj30-lv4',fam:'bj30',variant:'Lv4 Hybrid',price:35850,m:{7:547,10:447}},
  {id:'bj30-lv5',fam:'bj30',variant:'Lv5 Hybrid',price:37850,m:{7:577,10:472}},
  {id:'bj40-std',fam:'bj40',variant:'Standard',price:44600,m:{7:680,10:557}},
- {id:'arcfox-low',fam:'arcfox',variant:'Low Spec',price:26000,m:{7:397,10:325}},
- {id:'arcfox-high',fam:'arcfox',variant:'High Spec',price:28000,m:{7:439,10:360}},
- {id:'tunland-v7',fam:'tunland',variant:'V7 4x4',price:43800,m:{7:668,10:547}},
- {id:'cs2-9',fam:'cs2',variant:'9-Seater',price:44500,m:{7:679}},
+ {id:'arcfox-low',fam:'arcfox',variant:'LOWSPEC',price:26000,m:{7:397}},
+ {id:'arcfox-high',fam:'arcfox',variant:'HIGHSPEC',price:28800,m:{7:439}},
+ {id:'tunland-v7',fam:'tunland',variant:'V7 4x4',price:44500,m:{7:679}},
+ {id:'cs2-9',fam:'cs2',variant:'9-Seater',price:44500,m:{7:679,10:555}},
  {id:'cs2-15',fam:'cs2',variant:'15-Seater',price:39900,m:{5:798}},
  {id:'cs2-17',fam:'cs2',variant:'17-Seater',price:44500,m:{5:890}}
 ];
 
 let step=1;
-let A={ famId:null, skuId:null, tenure:null, deposit:0, salary:'', deduction:'', bank:null, calcShown:false, tradein:'no', testdrive:'no', tdDate:'', name:'', phone:'' };
+let A={ brand:null, famId:null, skuId:null, tenure:null, deposit:0, customDeposit:'', salary:'', deduction:'', bank:null, calcShown:false, tradein:'no', testdrive:'no', tdDate:'', name:'', phone:'' };
 const BANKS=['BIBD','Baiduri','TAIB','SCB','Others'];
 
 const $=s=>document.querySelector(s);
@@ -128,6 +128,7 @@ function step1(){
   h += `<div class="big">
     <div class="bigcard ${A.brand==='BAIC'?'on':''}" data-act="brand" data-v="BAIC"><img src="data:image/jpeg;base64,${ASSETS.baic_logo}" style="background:#000;padding:4px;border-radius:7px;width:56px;height:40px;object-fit:contain"><div><b>BAIC</b><span>SUVs - X55, BJ30, BJ40L</span></div></div>
     <div class="bigcard ${A.brand==='FOTON'?'on':''}" data-act="brand" data-v="FOTON"><div style="background:#fff;border-radius:7px;width:56px;height:40px;display:flex;align-items:center;justify-content:center"><img src="data:image/jpeg;base64,${ASSETS.foton_logo}" style="height:26px"></div><div><b>FOTON</b><span>Commercial - Tunland, CS2</span></div></div>
+    <div class="bigcard ${A.brand==='ARCFOX'?'on':''}" data-act="brand" data-v="ARCFOX"><div style="background:#fff;border-radius:7px;width:56px;height:40px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:11px;color:#17191e">ARCFOX</div><div><b>ARCFOX</b><span>Electric mobility - T1</span></div></div>
   </div>`;
   h += nav('Continue', !A.brand);
   return h;
@@ -144,12 +145,14 @@ function step2(){
   h += nav('Continue', !A.skuId);
   return h;
 }
-function terms(s){ return Object.keys(s.m).map(Number).sort((a,b)=>a-b); }
+function terms(s){ return [5,7,10]; }
+function currentDeposit(){ return Math.max(0,Math.min(Number(A.customDeposit!==''?A.customDeposit:A.deposit)||0,sku(A.skuId)?.price||0)); }
 function computeMonthly(s){
   if(!s||!A.tenure) return null;
-  const base=s.m[A.tenure]; if(base==null) return null;
-  const principal=Math.max(s.price-Number(A.deposit||0),0);
-  return { monthly:Math.round(base*(principal/s.price)), principal };
+  const deposit=currentDeposit(), principal=Math.max(s.price-deposit,0), base=s.m[A.tenure];
+  if(base!=null) return {monthly:Math.round(base*(principal/s.price)),principal,quoted:true,rate:null};
+  const years=Number(A.tenure),rate=years===10?0.05:0.04;
+  return {monthly:Math.round(principal*(1+rate*years)/(years*12)),principal,quoted:false,rate};
 }
 function dbrAvailable(){
   if(A.salary==='') return null;
@@ -159,7 +162,7 @@ function step3(){
   const s = sku(A.skuId);
   let h = `<h1>Estimate your payment</h1><p class="lead">${esc(fam(s.fam).name)} ${esc(s.variant)}</p>`;
   h += `<div class="field"><span class="lbl">Loan tenure</span><div class="chips">${terms(s).map(t=>`<button class="chip" role="radio" aria-checked="${A.tenure===t}" data-act="tenure" data-v="${t}">${t} years</button>`).join('')}</div></div>`;
-  h += `<div class="field"><span class="lbl">Deposit<span class="opt">optional</span></span><div class="chips">${[0,1000,3000,5000].map(d=>`<button class="chip" role="radio" aria-checked="${A.deposit===d}" data-act="dep" data-v="${d}">${d===0?'None':'BND '+num(d)}</button>`).join('')}</div></div>`;
+    h += `<div class="field"><span class="lbl">Deposit<span class="opt">optional</span></span><div class="chips">${[0,1000,2000,3000,4000,5000,6000,7000,8000,9000,10000].map(d=>`<button class="chip" role="radio" aria-checked="${Number(A.customDeposit!==''?A.customDeposit:A.deposit)===d}" data-act="dep" data-v="${d}">${d===0?'None':'BND '+num(d)}</button>`).join('')}</div><input class="inp" style="margin-top:8px" data-act="input" data-id="customDeposit" type="number" min="0" max="${s.price}" inputmode="numeric" placeholder="Or enter custom deposit (BND)" value="${esc(A.customDeposit)}"><p class="note">Deposit is capped at the vehicle price.</p></div>`;
   h += `<div class="row2"><div class="field"><span class="lbl">Monthly salary (BND)</span><input class="inp" data-act="input" data-id="salary" inputmode="numeric" placeholder="e.g. 1800" value="${esc(A.salary)}"></div>
     <div class="field"><span class="lbl">Monthly deduction (BND)<span class="opt">optional</span></span><input class="inp" data-act="input" data-id="deduction" inputmode="numeric" placeholder="e.g. 150" value="${esc(A.deduction)}"></div></div>`;
   h += `<div class="field"><span class="lbl">Salary bank</span><div class="chips">${BANKS.map(b=>`<button class="chip" role="radio" aria-checked="${A.bank===b}" data-act="bank" data-v="${b}">${b}</button>`).join('')}</div></div>`;
@@ -180,8 +183,9 @@ function step3(){
   }
   h += `<div class="est"><h3 style="font-family:var(--disp);font-size:15px;margin:0 0 8px">Live Estimation</h3>
     <div class="erow"><span>Vehicle price</span><span class="v">BND ${num(s.price)}</span></div>
-    ${A.deposit?`<div class="erow"><span>Deposit</span><span class="v">- BND ${num(A.deposit)}</span></div>`:''}
-    <div class="erow big"><span>Est. monthly (${A.tenure}yr)</span><span class="v">BND ${num(c.monthly)}</span></div>
+    ${currentDeposit()?`<div class="erow"><span>Deposit</span><span class="v">- BND ${num(currentDeposit())}</span></div>`:''}
+    <div class="erow big"><span>${c.quoted?'Quoted monthly':'Provisional estimate'} (${A.tenure}yr)</span><span class="v">BND ${num(c.monthly)}</span></div>
+    <div class="note">${c.quoted?'Based on supplied price-list payment, adjusted proportionally for deposit. Confirm with TCY Motors and the bank.':`Provisional calculation using ${(c.rate*100).toFixed(0)}% flat annual rate; no official payment was supplied for this tenure.`}</div>
     ${dbr!==null?`<div class="erow"><span>DBR available (60% - deduction)</span><span class="v">BND ${num(dbr)}</span></div>`:''}
     </div>${dbrNote}
     <p class="note">Estimate only - final financing terms, DBR assessment and approval are subject to your bank.</p>`;
@@ -216,7 +220,7 @@ function waLink(){
   const s=sku(A.skuId), f=fam(s.fam), c=A.tenure?computeMonthly(s):null;
   const lines=[`*TCY Motors Brunei - Enquiry*`,`Attn: ${CONSULTANT.name}`,`ID: ${genId()}`,'',
    `*Customer:* ${A.name||'-'}, ${A.phone||'-'}`,`*Vehicle:* ${f.brand} ${f.name} - ${s.variant}`,`*Price:* BND ${num(s.price)}`];
-  if(A.tenure) lines.push(`*Tenure:* ${A.tenure}yr`,`*Deposit:* ${A.deposit?'BND '+num(A.deposit):'None'}`,`*Est. monthly:* BND ${num(c.monthly)}`);
+  if(A.tenure) lines.push(`*Tenure:* ${A.tenure}yr`,`*Deposit:* ${currentDeposit()?'BND '+num(currentDeposit()):'None'}`,`${c.quoted?'*Price-list monthly (deposit-adjusted):*':'*Provisional monthly estimate:*'} BND ${num(c.monthly)}`,...(c.quoted?[]:[`*Assumption:* ${(c.rate*100).toFixed(0)}% flat annual rate`]));
   if(A.salary) lines.push(`*Monthly salary:* BND ${num(A.salary)}`);
   lines.push(`*Test drive:* ${A.testdrive==='yes'?'Yes, '+(A.tdDate||'date TBC'):'No'}`,`*Trade-in:* ${A.tradein==='yes'?'Yes':'No'}`,'','Estimate only, pending bank confirmation.');
   return `https://wa.me/${CONSULTANT.wa}?text=${encodeURIComponent(lines.join('\n'))}`;
@@ -242,7 +246,7 @@ document.addEventListener('click', e=>{
   else if(act==='fam'){ A.famId=el.dataset.id; A.skuId=null; render(); }
   else if(act==='sku'){ A.skuId=el.dataset.id; A.tenure=null; A.calcShown=false; render(); }
   else if(act==='tenure'){ A.tenure=Number(el.dataset.v); render(); }
-  else if(act==='dep'){ A.deposit=Number(el.dataset.v); render(); }
+  else if(act==='dep'){ A.deposit=Number(el.dataset.v); A.customDeposit=''; render(); }
   else if(act==='bank'){ A.bank=el.dataset.v; render(); }
   else if(act==='calc'){ A.calcShown=true; render(); }
   else if(act==='td'){ A.testdrive=el.dataset.v; render(); }
@@ -251,7 +255,7 @@ document.addEventListener('click', e=>{
   else if(act==='back'){ step=Math.max(step-1,1); render(); }
   else if(act==='send'){ saveLocal(); }
 });
-document.addEventListener('input', e=>{ const el=e.target; if(el.dataset.act!=='input') return; A[el.dataset.id]=el.value; });
+document.addEventListener('input', e=>{ const el=e.target; if(el.dataset.act!=='input') return; A[el.dataset.id]=el.value; if(el.dataset.id==='customDeposit'){ A.deposit=Number(el.value||0); A.calcShown=false; } });
 render();
 </script>
 </body>
