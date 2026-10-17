@@ -1,0 +1,11 @@
+ASK MUEZ Catalogue Update
+
+Preview file: index.html
+
+This package updates the brand model view into a catalogue/gallery page with model image galleries, variant prices and the supplied monthly payment terms. It retains the vehicle selection, estimate and WhatsApp enquiry flow.
+
+Source: internal BAIC / FOTON / ARCFOX price list supplied by the user. Calculated figures are indicative and require bank confirmation. Missing financing terms are not quoted and are not inferred.
+
+The uploaded HTML uses embedded vehicle imagery already present in the source. External AutoPasar image files have not been downloaded into this package.
+
+Not deployed to Netlify; GitHub was not modified.
