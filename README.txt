@@ -1,16 +1,21 @@
-# ASK MUEZ — Premium Netlify Deployment
+ASK MUEZ — Updated Netlify deployment package
 
-This package contains the updated single-file showroom.
+Contents
+- index.html: standalone catalogue-first ASK MUEZ site with embedded vehicle images.
 
-## Included
-- Premium TCY Motors showroom layout and vehicle catalogue
-- BAIC / FOTON / ARCFOX filters and existing comparison / WhatsApp features
-- Payment calculator with deposit presets (BND 0 to BND 10,000), custom deposit, and 5/7/10-year terms
-- Source-listed monthly figures retained; calculated or unquoted terms are labelled indicative
-- WhatsApp routing to +673 813 8884
+What changed
+- Added clickable brand filters: All Vehicles, BAIC, ARCFOX and FOTON.
+- Kept vehicle cards and side-by-side comparison as the first experience.
+- Corrected ARCFOX T1 pricing and 7-year quoted payments from the supplied rate card.
+- Removed unquoted monthly payment claims for FOTON Tunland V7 and clearly labels missing terms.
+- Corrected FOTON View CS2 variant payment display, keeping each variant's quoted terms separate.
+- WhatsApp enquiry remains directed to +673 813 8884.
 
-## Deploy
-Upload this ZIP through Netlify's manual deploy flow, or extract it and drag the folder containing `index.html` into Netlify Drop. The `index.html` file must be at the deployment root.
+Deploy
+1. Open the ASK MUEZ project in Netlify.
+2. Open Deploys and use the manual deploy / drag-and-drop area.
+3. Upload the ZIP contents (or drag this ZIP if Netlify accepts ZIP uploads). Ensure index.html is at the published root, not nested inside a folder.
+4. Open https://askmuez.netlify.app/ and test each brand filter, selecting up to three cars, comparison cards, and the WhatsApp button.
 
-## Payment note
-Figures marked calculated are indicative only, based on the supplied BAIC/FOTON price workbook. For terms with no source figure, the calculator uses an inferred flat-rate pattern (about 4% per year for 5/7 years and 5% for 10 years) and clearly labels the result as an estimate. Confirm all figures with TCY Motors and the financing provider.
+Important
+This package does not publish itself and has not changed the live Netlify site. Publish it through your Netlify account. Listed payments are reference quotes, not financing approval. Missing terms are not invented. The deposit calculator is not included in this comparison-first revision.
