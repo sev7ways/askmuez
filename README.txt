@@ -1,5 +1,10 @@
 ASK MUEZ — Updated Netlify deployment package
 
+## Deployment status
+[![Netlify Status](https://api.netlify.com/api/v1/badges/54cfabc6-b6f5-48c3-9940-1007198ef7c4/deploy-status)](https://app.netlify.com/projects/askmuez/deploys)
+
+[Deploy status badge settings](https://app.netlify.com/projects/askmuez/configuration/developer-settings#deploy-status-badge)
+
 Contents
 - index.html: standalone catalogue-first ASK MUEZ site with embedded vehicle images.
 
