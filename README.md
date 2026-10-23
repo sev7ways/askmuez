@@ -1,24 +1,21 @@
-# ASK MUEZ — TCY Motors Brunei
+ASK MUEZ — Updated Netlify deployment package
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/54cfabc6-b6f5-48c3-9940-1007198ef7c4/deploy-status)](https://app.netlify.com/projects/askmuez/deploys)
+Contents
+- index.html: standalone catalogue-first ASK MUEZ site with embedded vehicle images.
 
-Browse the BAIC, ARCFOX and FOTON catalogue, compare quoted prices, estimate financing and send an enquiry to Muez at TCY Motors Brunei.
+What changed
+- Added clickable brand filters: All Vehicles, BAIC, ARCFOX and FOTON.
+- Kept vehicle cards and side-by-side comparison as the first experience.
+- Corrected ARCFOX T1 pricing and 7-year quoted payments from the supplied rate card.
+- Removed unquoted monthly payment claims for FOTON Tunland V7 and clearly labels missing terms.
+- Corrected FOTON View CS2 variant payment display, keeping each variant's quoted terms separate.
+- WhatsApp enquiry remains directed to +673 813 8884.
 
-**Live site:** https://askmuez.netlify.app/  
-**Repository:** https://github.com/sev7ways/askmuez  
-**Netlify deploys:** https://app.netlify.com/projects/askmuez/deploys
+Deploy
+1. Open the ASK MUEZ project in Netlify.
+2. Open Deploys and use the manual deploy / drag-and-drop area.
+3. Upload the ZIP contents (or drag this ZIP if Netlify accepts ZIP uploads). Ensure index.html is at the published root, not nested inside a folder.
+4. Open https://askmuez.netlify.app/ and test each brand filter, selecting up to three cars, comparison cards, and the WhatsApp button.
 
-## Interface flow
-
-1. Select BAIC, ARCFOX, FOTON or view all vehicles.
-2. Browse the catalogue, choose variants and compare vehicles.
-3. Review vehicle highlights, pricing and available monthly payment references.
-4. Use the indicative financing estimator and enquiry summary.
-5. Send an enquiry through WhatsApp.
-
-## Important notes
-
-- Vehicle selection, comparison and WhatsApp link generation run in the browser.
-- Enquiry history is stored locally in the visitor's browser; this is not a server-side database.
-- Payment values and calculations are indicative only. Confirm pricing, finance terms and approval with TCY Motors and the relevant bank.
-- A Netlify status badge reports the deployment status associated with the badge ID above; it does not itself trigger a deployment.
+Important
+This package does not publish itself and has not changed the live Netlify site. Publish it through your Netlify account. Listed payments are reference quotes, not financing approval. Missing terms are not invented. The deposit calculator is not included in this comparison-first revision.
