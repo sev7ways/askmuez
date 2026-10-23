@@ -1,19 +1,21 @@
-ASK MUEZ — Merged interface package
+ASK MUEZ — Updated Netlify deployment package
 
 Contents
-- index.html: standalone ASK MUEZ site with embedded vehicle images.
+- index.html: standalone catalogue-first ASK MUEZ site with embedded vehicle images.
 
-Interface flow
-1. Brand logo selectors (BAIC, ARCFOX, FOTON) and View all vehicles.
-2. Sticky Catalogue / Compare / Estimate actions.
-3. Vehicle image cards with visible variant selection and compare action; model summary, price/payment information, highlights and colour options expand/collapse.
-4. Enquiry summary for selected variants, live indicative payment estimate controls, and ASK MUEZ WhatsApp CTA.
+What changed
+- Added clickable brand filters: All Vehicles, BAIC, ARCFOX and FOTON.
+- Kept vehicle cards and side-by-side comparison as the first experience.
+- Corrected ARCFOX T1 pricing and 7-year quoted payments from the supplied rate card.
+- Removed unquoted monthly payment claims for FOTON Tunland V7 and clearly labels missing terms.
+- Corrected FOTON View CS2 variant payment display, keeping each variant's quoted terms separate.
+- WhatsApp enquiry remains directed to +673 813 8884.
+
+Deploy
+1. Open the ASK MUEZ project in Netlify.
+2. Open Deploys and use the manual deploy / drag-and-drop area.
+3. Upload the ZIP contents (or drag this ZIP if Netlify accepts ZIP uploads). Ensure index.html is at the published root, not nested inside a folder.
+4. Open https://askmuez.netlify.app/ and test each brand filter, selecting up to three cars, comparison cards, and the WhatsApp button.
 
 Important
-- Brand filtering, selection, comparison and WhatsApp link generation run in the browser.
-- Enquiry history is local to the visitor's browser; this is not a server-side database or backend.
-- Payment values are reference figures and estimates only, subject to confirmation by TCY Motors and the financing bank.
-- This package has not been published to Netlify from this session. To publish, upload the contents of this folder or this ZIP using the existing ASK MUEZ Netlify project's manual deploy area. Ensure index.html is at the published root.
-
-Live site: https://askmuez.netlify.app/
-Repository: https://github.com/sev7ways/askmuez
+This package does not publish itself and has not changed the live Netlify site. Publish it through your Netlify account. Listed payments are reference quotes, not financing approval. Missing terms are not invented. The deposit calculator is not included in this comparison-first revision.
